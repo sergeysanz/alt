@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ALT SPICE — Branding with Sauce 🌶️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.css">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div data-scroll-container>
+  <header class="header" data-scroll data-scroll-sticky data-scroll-target="body">
+    <div class="container header__inner">
+      <img
+        src="https://sergeysanz.github.io/alt/logo.png"
+        alt="ALT SPICE Logo"
+        class="logo-img"
+      />
+
+      <nav>
+        <a href="#hero">Story</a>
+        <a href="#recipe">Recipe</a>
+        <a href="#final">Try</a>
+      </nav>
+
+      <button class="btn">Try Now</button>
+    </div>
+  </header>
+
+  <!-- CANVAS 3D -->
+  <div class="model">
+    <canvas id="webgl"></canvas>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="section hero" data-scroll-section>
+      <div class="container center">
+        <h1 class="title-split">Branding with Sauce</h1>
+        <p class="subtitle-split">Scroll to feel the spice 🌶️</p>
+      </div>
+    </section>
+
+    <!-- RECIPE -->
+    <section id="recipe" class="section light" data-scroll-section>
+      <div class="container center">
+        <h2 class="title-split">Every brand is a recipe</h2>
+        <p class="subtitle-split">Strategy, storytelling and interaction.</p>
+        <div class="steps__grid">
+          <div class="step animate-step"><span>1</span> Plan</div>
+          <div class="step animate-step"><span>2</span> Design</div>
+          <div class="step animate-step"><span>3</span> Build</div>
+          <div class="step animate-step"><span>4</span> Launch</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section id="final" class="section final" data-scroll-section>
+      <div class="container center">
+        <h2 class="title-split">Ready to try our sauce?</h2>
+        <button class="btn large animate-btn">🌶️ Try Now</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- IMPORT MAP -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<!-- Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+
+<script type="module" src="./script.js"></script>
+</body>
+</html>

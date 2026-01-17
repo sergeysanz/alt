@@ -1,0 +1,166 @@
+:root {
+  --bg-dark: #0e0e0e;
+  --bg-light: #f5f2ed;
+  --accent: #ff718d;
+  --transition: 0.6s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background: var(--bg-dark);
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(14,14,14,0.85);
+  backdrop-filter: blur(6px);
+  transition: background var(--transition);
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.logo-img {
+  height: 120px; /* mucho más grande */
+  transition: transform var(--transition);
+}
+
+.header nav a {
+  margin: 0 16px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  position: relative;
+}
+
+.header nav a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: width var(--transition);
+}
+
+.header nav a:hover::after {
+  width: 100%;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 40px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: var(--accent);
+  color: white;
+}
+
+.btn.large {
+  font-size: 1.1rem;
+}
+
+/* MODEL */
+.model {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.light {
+  background: var(--bg-light);
+  color: black;
+}
+
+h1, h2 {
+  font-family: "Climate Crisis", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  opacity: 0.85;
+  margin-bottom: 24px;
+}
+
+/* STEPS GRID */
+.steps__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.step {
+  font-size: 1.5rem;
+  opacity: 0.7;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.step span {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+/* ANIMATIONS */
+.animate-title, .animate-subtitle, .animate-step, .animate-btn {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* FINAL */
+.final p {
+  margin: 24px 0;
+}
